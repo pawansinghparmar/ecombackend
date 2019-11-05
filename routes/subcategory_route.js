@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 });
 
 
-router.post('/create',subcat.create);
+router.post('/create',subcat.createSubcategory);
 
 router.get('/findallsubcat',subcat.findallsubcategoryryryryr)
 

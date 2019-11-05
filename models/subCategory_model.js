@@ -9,4 +9,11 @@ var SubCategorySchema=new Schema({
     description:{type:Schema.Types.String,required:true}
 })
 
+SubCategorySchema.virtual('getcategorydata',{
+    ref:'Category',
+    localField:'categoryid',
+    foreignField:'subcategories',
+    justOne: false
+})
+
 module.exports=mongoose.model('SubCategory',SubCategorySchema);

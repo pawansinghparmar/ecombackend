@@ -2,10 +2,11 @@ var SubCat=require('../models/subCategory_model');
 
 
 
-exports.create=function(req,res,next){
+exports.createSubcategory=function(req,res,next){
     var data=req.body;
    
 var cat=new SubCat({
+
     categoryid:data.category,
     name:data.subcategory,
     createdOn:Date.now(),
@@ -22,9 +23,9 @@ cat.save(function(err,result){
 }
 
 exports.findallsubcategoryryryryr=function(req,res,next){
-    SubCat.find(function(err,result){
+    SubCat.find().populate('getcategorydata').exec((function(err,result){
         if(result){
             res.send(result)
         }
-    })
+    }))
 }

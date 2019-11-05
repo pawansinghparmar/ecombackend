@@ -36,3 +36,15 @@ exports.deletbyID=function(req,res,next){
         }
     })
 }
+
+
+exports.getCatNameByid=function(req,res,next){
+    var data=req.body;
+    console.log(data)
+
+    Category.findById(data.id).exec(function(err,ress){
+        if(ress){
+            res.send(ress)
+        }
+    })
+}

@@ -16,4 +16,6 @@ router.post('/create',Cat.createCategory);
 router.post('/deletebyid',Cat.deletbyID);
 
 
+router.post('/getCatNameByid',Cat.getCatNameByid);
+
 module.exports = router;
